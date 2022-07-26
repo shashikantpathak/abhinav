@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	font-family: Helvetica;
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+	display: none;
+}
+
+@layer base {
+	:root {
+		--color-text-base: green;
+		--color-text-muted: 199, 210, 254;
+		--color-text-inverted: 79, 70, 229;
+		--color-fill: 67, 56, 202;
+		--color-button-accent: 255, 255, 255;
+		--color-button-accent-hover: 238, 242, 255;
+		--color-button-muted: 99, 102, 241;
+		--color-text-tertiary-gray: 102, 102, 102;
+		/* --color-border-dashed-primary: '#A7E1C0'; */
+		--color-djuli-primary: 48, 197, 111, 1;
+	}
+	.theme-swiss {
+		--color-text-base: 255, 255, 255;
+		--color-text-muted: 254, 202, 202;
+		--color-text-inverted: 220, 38, 38;
+		--color-fill: 185, 28, 28;
+		--color-button-accent: 255, 255, 255;
+		--color-button-accent-hover: 254, 242, 242;
+		--color-button-muted: 239, 68, 68;
+	}
+	.theme-neon {
+		--color-text-base: 17, 24, 2;
+		--color-text-muted: 47, 67, 6;
+		--color-text-inverted: 235, 250, 204;
+		--color-fill: 179, 255, 23;
+		--color-button-accent: 36, 52, 3;
+		--color-button-accent-hover: 55, 79, 5;
+		--color-button-muted: 212, 255, 122;
+	}
+}
+
+@layer base {
+	@font-face {
+		font-family: 'Outfit';
+		src: url('../fonts/Outfit-Black') .format('ttf');
+		font-weight: 900;
+		font-display: swap;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: 'Outfit';
+		src: url('../fonts/Outfit-Bold') .format('ttf');
+		font-weight: 700;
+		font-display: swap;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: 'Outfit';
+		src: url('../fonts/Outfit-ExtraBold') .format('ttf');
+		font-weight: 800;
+		font-display: swap;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: 'Outfit';
+		src: url('../fonts/Outfit-ExtraLight') .format('ttf');
+		font-weight: 200;
+		font-display: swap;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: 'Outfit';
+		src: url('../fonts/Outfit-Light') .format('ttf');
+		font-weight: 300;
+		font-display: swap;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: 'Outfit';
+		src: url('../fonts/Outfit-Medium') .format('ttf');
+		font-weight: 500;
+		font-display: swap;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: 'Outfit';
+		src: url('../fonts/Outfit-Regular') .format('ttf');
+		font-weight: 400;
+		font-display: swap;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: 'Outfit';
+		src: url('../fonts/Outfit-SemiBold') .format('ttf');
+		font-weight: 600;
+		font-display: swap;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: 'Outfit';
+		src: url('../fonts/Outfit-Thin') .format('ttf');
+		font-weight: 100;
+		font-display: swap;
+		font-style: normal;
+	}
+}
+
+@layer base {
+	[type='text'],
+	[type='email'],
+	[type='url'],
+	[type='password'],
+	[type='number'],
+	[type='date'],
+	[type='datetime-local'],
+	[type='month'],
+	[type='search'],
+	[type='tel'],
+	[type='time'],
+	[type='week'],
+	[multiple],
+	textarea,
+	select {
+		@apply w-full border border-gray-300 rounded-lg shadow-sm focus:border-green-400 focus:ring-green-600 focus:ring-1;
+	}
+	[type='checkbox'],
+	[type='radio'] {
+		@apply rounded border-gray-300 text-green-500 focus:ring-green-500;
+	}
+}
+
+@layer utilities {
+	.animation-delay-2000 {
+		animation-delay: 2s;
+	}
+	.perspective {
+		perspective: 100px;
+	}
+
+	.preserve-3d {
+		transform-style: preserve-3d;
+	}
+
+	.distance-1 {
+		transform: translateZ(-100px) scale(2);
+	}
+
+	.distance-2 {
+		transform: translateZ(-50px) scale(1.5);
+	}
+}
