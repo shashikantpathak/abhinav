@@ -3,7 +3,7 @@
 		<div class="items-center pt-24 flex justify-center w-full">
 			<div class="flex flex-col">
 				<div class="ml-4">
-					<RectangularToggleButton
+					<BaseRectangularToggleButton
 						width="w-32"
 						outerwidth="w-64"
 						btn-text-1="LIGHT THEME"
@@ -26,10 +26,10 @@
 </template>
 
 <script>
-import RectangularToggleButton from '@/utlities/RectangularToggleButton.vue';
+import BaseRectangularToggleButton from '@/utlities/BaseRectangularToggleButton.vue';
 export default {
 	components: {
-		RectangularToggleButton,
+		BaseRectangularToggleButton,
 	},
 };
 </script>

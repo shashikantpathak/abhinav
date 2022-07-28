@@ -3,7 +3,7 @@
 		:class="[
 			outerwidth,
 			isFeaturebtnType
-				? 'gap-2  p-1 flex justify-between'
+				? 'gap-2  p-1 flex justify-between '
 				: 'border-2 border-gray-200 rounded-lg gap-2  p-1 flex justify-between',
 		]"
 	>

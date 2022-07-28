@@ -1,6 +1,27 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css');
+
+@import url('https://fonts.googleapis.com/css?family=Inter:400,700,600,800|Roboto:400,500,100|Work+Sans:400,700,500|Mulish:400');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.carousel__prev {
+	left: 15px;
+	transform: translate(0, -50%);
+	background-color: #efefef !important;
+}
+.carousel__pagination-button--active {
+	background-color: #efefef !important;
+}
+.carousel__pagination-button {
+	background-color: #efefef !important;
+}
+.carousel__next {
+	right: 15px;
+	transform: translate(0, -50%);
+	background-color: #efefef !important;
+}
 
 body {
 	font-family: Helvetica;
@@ -47,70 +68,18 @@ body::-webkit-scrollbar {
 
 @layer base {
 	@font-face {
-		font-family: 'Outfit';
-		src: url('../fonts/Outfit-Black') .format('ttf');
-		font-weight: 900;
-		font-display: swap;
+		font-family: 'Helvetica Neue-Medium';
 		font-style: normal;
-	}
-	@font-face {
-		font-family: 'Outfit';
-		src: url('../fonts/Outfit-Bold') .format('ttf');
-		font-weight: 700;
-		font-display: swap;
-		font-style: normal;
-	}
-	@font-face {
-		font-family: 'Outfit';
-		src: url('../fonts/Outfit-ExtraBold') .format('ttf');
-		font-weight: 800;
-		font-display: swap;
-		font-style: normal;
-	}
-	@font-face {
-		font-family: 'Outfit';
-		src: url('../fonts/Outfit-ExtraLight') .format('ttf');
-		font-weight: 200;
-		font-display: swap;
-		font-style: normal;
-	}
-	@font-face {
-		font-family: 'Outfit';
-		src: url('../fonts/Outfit-Light') .format('ttf');
-		font-weight: 300;
-		font-display: swap;
-		font-style: normal;
-	}
-	@font-face {
-		font-family: 'Outfit';
-		src: url('../fonts/Outfit-Medium') .format('ttf');
 		font-weight: 500;
-		font-display: swap;
-		font-style: normal;
+		src: url('../fonts/HelveticaNeueMedium.ttf') format('truetype');
 	}
 	@font-face {
-		font-family: 'Outfit';
-		src: url('../fonts/Outfit-Regular') .format('ttf');
+		font-family: 'Helvetica Neue-Regular';
+		font-style: normal;
 		font-weight: 400;
-		font-display: swap;
-		font-style: normal;
-	}
-	@font-face {
-		font-family: 'Outfit';
-		src: url('../fonts/Outfit-SemiBold') .format('ttf');
-		font-weight: 600;
-		font-display: swap;
-		font-style: normal;
-	}
-	@font-face {
-		font-family: 'Outfit';
-		src: url('../fonts/Outfit-Thin') .format('ttf');
-		font-weight: 100;
-		font-display: swap;
-		font-style: normal;
+		src: url('../fonts/hlb.ttf') format('truetype');
 	}
 }
-
 @layer base {
 	[type='text'],
 	[type='email'],

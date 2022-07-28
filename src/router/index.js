@@ -1,10 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-import TheLandingPage from '@/views/TheLandingPage.vue';
+import TheLandingPage from '@/pages/TheLandingPage.vue';
 
 const UnAuthorizedRoutes = [
 	{ path: '/', name: 'TheLandingPage', component: TheLandingPage },
-	{ path: '/about', name: 'About', component: () => import('@/views/TheAbout.vue') },
+	{
+		path: '/about',
+		name: 'About',
+		component: () => import('@/pages/TheAbout.vue'),
+	},
 ];
 
 const router = createRouter({

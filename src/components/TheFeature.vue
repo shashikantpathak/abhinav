@@ -77,7 +77,7 @@
 					sed do eiusmod tempor.
 				</div>
 				<div class="pt-10">
-					<RectangularToggleButton
+					<BaseRectangularToggleButton
 						width="w-48"
 						outerwidth="w-96"
 						btn-text-1="See pricing"
@@ -94,10 +94,11 @@
 </template>
 
 <script>
-import RectangularToggleButton from '@/utlities/RectangularToggleButton.vue';
+import BaseRectangularToggleButton from '@/utlities/BaseRectangularToggleButton.vue';
+
 export default {
 	components: {
-		RectangularToggleButton,
+		BaseRectangularToggleButton,
 	},
 	data() {
 		return {

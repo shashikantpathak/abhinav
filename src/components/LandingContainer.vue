@@ -1,6 +1,6 @@
 <template>
 	<section class="w-96 mx-auto flex justify-between flex-col">
-		<RectangularToggleButton
+		<BaseRectangularToggleButton
 			width="w-48"
 			outerwidth="w-96"
 			btn-text-1="See how"
@@ -17,10 +17,10 @@
 </template>
 
 <script>
-import RectangularToggleButton from '@/utlities/RectangularToggleButton.vue';
+import BaseRectangularToggleButton from '@/utlities/BaseRectangularToggleButton.vue';
 export default {
 	components: {
-		RectangularToggleButton,
+		BaseRectangularToggleButton,
 	},
 };
 </script>
