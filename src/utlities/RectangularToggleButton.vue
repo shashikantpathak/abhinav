@@ -1,7 +1,11 @@
 <template>
 	<div
-		class="gap-2 border border-gray-100 rounded-lg p-1 flex justify-between"
-		:class="outerwidth"
+		:class="[
+			outerwidth,
+			isFeaturebtnType
+				? 'gap-2  p-1 flex justify-between'
+				: 'border-2 border-gray-200 rounded-lg gap-2  p-1 flex justify-between',
+		]"
 	>
 		<div
 			:class="[
@@ -38,10 +42,12 @@ export default {
 		outerwidth: { type: String, default: '' },
 		bgcolor: { type: String, default: '' },
 		textcolor: { type: String, default: '' },
+		btnActiveStatus: { type: Boolean, default: false },
+		isFeaturebtnType: { type: Boolean, default: false },
 	},
 	data() {
 		return {
-			btnStatus: false,
+			btnStatus: this.btnActiveStatus,
 		};
 	},
 	methods: {

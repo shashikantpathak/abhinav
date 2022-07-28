@@ -13,16 +13,6 @@ module.exports = {
 	darkMode: 'media',
 	content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
 	theme: {
-		screens: {
-			desktop: '1440px',
-			tablet: '1260px',
-		},
-
-		boxShadow: {
-			sm: '0px 4px 12px 0px rgba(0,0,0,0.04)',
-			lg: '0px 8px 20px 0px rgba(18,16,99,0.06)',
-		},
-
 		fontSize: {
 			xsss: ['12px', { lineHeight: '14px', letterSpacing: '-0.03em' }],
 			xss: ['16px', { lineHeight: '24px', letterSpacing: '-0.03em' }],
@@ -32,7 +22,11 @@ module.exports = {
 				{ lineHeight: '27px' },
 			],
 			base: ['clamp(1.13rem, calc(0.98rem + 0.73vw), 1.50rem)', '1.5'],
-			lg: ['clamp(1.27rem, calc(1.03rem + 1.19vw), 1.88rem)', '1.4'],
+			lg: [
+				'clamp(1.27rem, calc(1.03rem + 1.19vw), 1.88rem)',
+				'1.4',
+				{ lineHeight: '56.25px' },
+			],
 			xl: ['clamp(1.42rem, calc(1.06rem + 1.80vw), 2.34rem)', '1.4'],
 			'2xl': ['clamp(1.60rem, calc(1.08rem + 2.59vw), 2.93rem)', '1.2'],
 			'3xl': ['clamp(1.80rem, calc(1.08rem + 3.63vw), 3.66rem)', '1.1'],
@@ -40,6 +34,7 @@ module.exports = {
 			'4xl': ['clamp(2.03rem, calc(1.03rem + 4.98vw), 4.10rem)', '1'],
 			'5xl': ['clamp(2.28rem, calc(0.94rem + 6.71vw), 5.72rem)', '1'],
 			'6xl': ['clamp(2.57rem, calc(0.78rem + 8.95vw), 7.15rem)', '1'],
+			'7xl': ['170px', { lineHeight: '199px', letterSpacing: '0.2em' }],
 			// xss: [
 			// 	'clamp(1.00rem, calc(0.92rem + 0.39vw), 1.20rem)',
 			// 	'1.4',
@@ -54,15 +49,26 @@ module.exports = {
 			// '4xl': ['72px', { lineHeight: '84.38px' }],
 			// '5xl': ['80px', { lineHeight: '80px', letterSpacing: '-0.032em' }],
 		},
+
 		fontFamily: {
 			sans: ['Outfit', 'sans-serif'],
 		},
-
 		extend: {
+			screens: {
+				desktop: '1440px',
+				tablet: '1260px',
+			},
+
+			boxShadow: {
+				sm: '0px 4px 12px 0px rgba(0,0,0,0.04)',
+				lg: '0px 8px 20px 0px rgba(18,16,99,0.06)',
+			},
+
 			backgroundImage: {
 				texture:
 					// eslint-disable-next-line quotes
-					"url('./src/assets/img/vectors/vectorcurve.svg')",
+					"url('./src/assets/img/test.svg')",
+				// "url('./src/assets/img/vectors/vectorcurve.svg')",
 				// eslint-disable-next-line quotes
 				test: "url('./src/assets/img/home-content.png')",
 			},
@@ -72,7 +78,7 @@ module.exports = {
 			container: {
 				center: true,
 				padding: {
-					DEFAULT: '1rem',
+					DEFAULT: '9.5rem,0rem ',
 					sm: '2rem',
 					lg: '4rem',
 					xl: '5rem',
@@ -88,6 +94,7 @@ module.exports = {
 				'text-sm': '0px 4px 12px 0px rgba(0,0,0,0.04)',
 				'text-md': '1px 2px 0px rgba(0, 0, 0, 0.90)',
 				'text-lg': '1px 4px 0px rgba(0, 0, 0, 0.90)',
+				'text-xl': '0px 16px 24px rgba(0, 0, 0, 0.12',
 			},
 			textColor: {
 				skin: {
@@ -113,6 +120,8 @@ module.exports = {
 					'button-muted': withOpacity('--color-button-muted'),
 					'djuli-primary-color': '#30C56F',
 					'djuli-secondary-color': '#1E1E51',
+					'dark-view': '#111827',
+					'djuli-tertiary': '#6A60CE',
 				},
 			},
 			colors: {
@@ -137,9 +146,6 @@ module.exports = {
 			// 	'5xl': ['clamp(2.28rem, calc(0.94rem + 6.71vw), 5.72rem)', '1'],
 			// 	'6xl': ['clamp(2.57rem, calc(0.78rem + 8.95vw), 7.15rem)', '1'],
 			// },
-			screens: {
-				xs: '425px',
-			},
 		},
 	},
 	plugins: [
@@ -182,7 +188,9 @@ module.exports = {
 					'justify-content': 'center',
 					height: '4rem',
 					display: 'flex',
-					backgroundColor: 'white ',
+					backgroundColor: 'transparent ',
+					border: '1px',
+					'border-radius': '8px',
 					// color: '#30C56F',
 					'box-shadow': 'none',
 					// '&:hover': {
