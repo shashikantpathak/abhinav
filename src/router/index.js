@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router';
-
 import TheLandingPage from '@/pages/TheLandingPage.vue';
 
 const UnAuthorizedRoutes = [

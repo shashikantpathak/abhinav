@@ -1,11 +1,11 @@
-function withOpacity(variableName) {
-	return ({ opacityValue }) => {
-		if (opacityValue !== undefined) {
-			return `rgba(var(${variableName}), ${opacityValue})`;
-		}
-		return `rgb(var(${variableName}))`;
-	};
-}
+// function withOpacity(variableName) {
+// 	return ({ opacityValue }) => {
+// 		if (opacityValue !== undefined) {
+// 			return `rgba(var(${variableName}), ${opacityValue})`;
+// 		}
+// 		return `rgb(var(${variableName}))`;
+// 	};
+// }
 
 /** @type {import('tailwindcss').Config} */
 const plugin = require('tailwindcss/plugin');
@@ -13,116 +13,45 @@ module.exports = {
 	darkMode: 'media',
 	content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
 	theme: {
-		fontSize: {
-			xsss: ['12px', { lineHeight: '14px', letterSpacing: '-0.03em' }],
-			xss: ['16px', { lineHeight: '24px', letterSpacing: '-0.03em' }],
-			sm: [
-				'clamp(1.00rem, calc(0.92rem + 0.39vw), 1.20rem)',
-				'1.4',
-				{ lineHeight: '27px' },
-			],
-			base: ['clamp(1.13rem, calc(0.98rem + 0.73vw), 1.50rem)', '1.5'],
-			lg: [
-				'clamp(1.27rem, calc(1.03rem + 1.19vw), 1.88rem)',
-				'1.4',
-				{ lineHeight: '56.25px' },
-			],
-			xl: ['clamp(1.42rem, calc(1.06rem + 1.80vw), 2.34rem)', '1.4'],
-			'2xl': ['clamp(1.60rem, calc(1.08rem + 2.59vw), 2.93rem)', '1.2'],
-			'3xl': ['clamp(1.80rem, calc(1.08rem + 3.63vw), 3.66rem)', '1.1'],
-			'4xl': ['clamp(2.03rem, calc(1.03rem + 4.98vw), 4.10rem)', '1'],
-			'5xl': ['clamp(2.28rem, calc(0.94rem + 6.71vw), 5.72rem)', '1'],
-			'6xl': ['clamp(2.57rem, calc(0.78rem + 8.95vw), 7.15rem)', '1'],
-			'7xl': ['170px', { lineHeight: '199px', letterSpacing: '0.2em' }],
-		},
-
-		fontFamily: {
-			sans: ['Outfit', 'sans-serif'],
-		},
 		extend: {
-			screens: {
-				desktop: '1440px',
-				tablet: '1260px',
+			textColor: {
+				skin: {
+					green: {
+						500: '#30c56f',
+					},
+					stone: {
+						500: '#666666',
+					},
+					emerald: {
+						200: '#a7e1bf',
+					},
+					white: '#ffffff',
+					'primary-dark': '#1E1E51',
+				},
 			},
-
-			boxShadow: {
-				sm: '0px 4px 12px 0px rgba(0,0,0,0.04)',
-				lg: '0px 8px 20px 0px rgba(18,16,99,0.06)',
+			backgroundColor: {
+				skin: {
+					green: {
+						500: '#30c56f',
+					},
+					stone: {
+						500: '#666666',
+					},
+					emerald: {
+						200: '#a7e1bf',
+					},
+					white: '#ffffff',
+					'primary-dark': '#1E1E51',
+				},
 			},
-
 			backgroundImage: {
 				texture:
 					// eslint-disable-next-line quotes
-					"url('./src/assets/img/test.svg')",
-				// "url('./src/assets/img/vectors/vectorcurve.svg')",
-				// eslint-disable-next-line quotes
-				test: "url('./src/assets/img/home-content.png')",
-			},
-			blur: {
-				px: '1px',
-			},
-			container: {
-				center: true,
-				padding: {
-					DEFAULT: '9.5rem,0rem ',
-					sm: '2rem',
-					lg: '4rem',
-					xl: '5rem',
-					'2xl': '6rem',
-				},
-			},
-
-			lineClamp: {
-				10: '10',
-			},
-
-			dropShadow: {
-				'text-sm': '0px 4px 12px 0px rgba(0,0,0,0.04)',
-				'text-md': '1px 2px 0px rgba(0, 0, 0, 0.90)',
-				'text-lg': '1px 4px 0px rgba(0, 0, 0, 0.90)',
-				'text-xl': '0px 16px 24px rgba(0, 0, 0, 0.12',
-			},
-			textColor: {
-				skin: {
-					base: withOpacity('--color-text-base'),
-					muted: withOpacity('--color-text-muted'),
-					inverted: withOpacity('--color-text-inverted'),
-					basegrey: withOpacity('--color-text-tertiary-gray'),
-					'djuli-primary': withOpacity('--color-djuli-primary'),
-					'grey-muted': '#666666',
-					'grey-faint': '#B6B6B6',
-					'djuli-primary-color': '#30C56F',
-					'djuli-secondary-color': '#1E1E51',
-				},
-			},
-
-			backgroundColor: {
-				skin: {
-					fill: withOpacity('--color-fill'),
-					'button-accent': withOpacity('--color-button-accent'),
-					'button-accent-hover': withOpacity(
-						'--color-button-accent-hover',
-					),
-					'button-muted': withOpacity('--color-button-muted'),
-					'djuli-primary-color': '#30C56F',
-					'djuli-secondary-color': '#1E1E51',
-					'dark-view': '#111827',
-					'djuli-tertiary': '#6A60CE',
-				},
-			},
-			colors: {
-				bkg: '#171819',
-				muted: '#C9CBCF',
-				accent: '#66CCC1',
-			},
-
-			gradientColorStops: {
-				skin: {
-					hue: withOpacity('--color-fill'),
-				},
+					"url('@/assets/img/vectors/curve.svg')",
 			},
 		},
 	},
+
 	plugins: [
 		plugin(({ addUtilities, theme }) => {
 			addUtilities({
@@ -135,6 +64,21 @@ module.exports = {
 				'.faded': {
 					opacity: theme('opacity.100'),
 					transform: 'translate3d(0, 0, 0)',
+				},
+				'.features-text': {
+					'text-transform': 'uppercase',
+					'-webkit-text-stroke': '1px #eaeaea',
+					color: 'white',
+				},
+				testinomial: {
+					display: 'flex',
+					'flex-direction': 'row',
+					'align-items': 'center',
+					padding: '0px',
+					gap: '116px',
+
+					width: '747px',
+					height: '393px',
 				},
 			});
 		}),
@@ -195,9 +139,15 @@ module.exports = {
 		}),
 		plugin(function ({ addBase, theme }) {
 			addBase({
-				h1: { fontSize: theme('fontSize.2xl') },
-				h2: { fontSize: theme('fontSize.xl') },
-				h3: { fontSize: theme('fontSize.lg') },
+				h1: {
+					fontSize: theme('fontSize.2xl'),
+				},
+				h2: {
+					fontSize: theme('fontSize.xl'),
+				},
+				h3: {
+					fontSize: theme('fontSize.lg'),
+				},
 			});
 		}),
 		require('@tailwindcss/aspect-ratio'),

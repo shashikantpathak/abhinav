@@ -1,11 +1,26 @@
-@import url('https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css');
-
-@import url('https://fonts.googleapis.com/css?family=Inter:400,700,600,800|Roboto:400,500,100|Work+Sans:400,700,500|Mulish:400');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+body {
+	font-family: Helvetica;
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+/* *,
+*:after,
+*:before {
+	border: 1px solid red;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+} */
+body::-webkit-scrollbar {
+	display: none;
+}
+.carousel {
+	margin: 1rem !important;
+}
 .carousel__prev {
 	left: 15px;
 	transform: translate(0, -50%);
@@ -23,39 +38,160 @@
 	background-color: #efefef !important;
 }
 
-body {
-	font-family: Helvetica;
-	-ms-overflow-style: none; /* IE and Edge */
-	scrollbar-width: none; /* Firefox */
-}
-
-body::-webkit-scrollbar {
-	display: none;
-}
-
 @layer base {
 	:root {
-		--color-text-base: green;
-		--color-text-muted: 199, 210, 254;
-		--color-text-inverted: 79, 70, 229;
-		--color-fill: 67, 56, 202;
-		--color-button-accent: 255, 255, 255;
-		--color-button-accent-hover: 238, 242, 255;
-		--color-button-muted: 99, 102, 241;
-		--color-text-tertiary-gray: 102, 102, 102;
-		/* --color-border-dashed-primary: '#A7E1C0'; */
-		--color-djuli-primary: 48, 197, 111, 1;
+		--neutral-gray-50: #f8fafc;
+		--neutral-gray-100: #f1f5f9;
+		--neutral-gray-200: #e2e8f0;
+		--neutral-gray-300: #cbd5e1;
+		--neutral-gray-400: #94a3b8;
+		--neutral-gray-500: #64748b;
+		--neutral-gray-600: #475569;
+		--neutral-gray-700: #334155;
+		--neutral-gray-800: #1e293b;
+		--neutral-gray-900: #0f172a;
+		--primary-blue-50: #e8edfb;
+		--primary-blue-100: #bbcaf3;
+		--primary-blue-200: #8ea7ec;
+		--primary-blue-300: #6183e4;
+		--primary-blue-400: #3460dc;
+		--primary-blue-500: #1d4ed8;
+		--primary-blue-600: #173ead;
+		--primary-blue-700: #112f82;
+		--primary-blue-800: #0c1f56;
+		--primary-blue-900: #06102b;
+		--success-green-50: #ecfdf5;
+		--success-green-100: #d1fae5;
+		--success-green-200: #a7f3d0;
+		--success-green-300: #6ee7b7;
+		--success-green-500: #10b981;
+		--success-green-400: #34d399;
+		--success-green-600: #059669;
+		--success-green-700: #047857;
+		--success-green-800: #065f46;
+		--success-green-900: #064e3b;
+		--warning-yellow-50: #fffbeb;
+		--warning-yellow-100: #fef3c7;
+		--warning-yellow-200: #fde68a;
+		--warning-yellow-300: #fcd34d;
+		--warning-yellow-400: #fbbf24;
+		--warning-yellow-500: #f59e0b;
+		--warning-yellow-500: #f59e0b;
+		--warning-yellow-600: #d97706;
+		--warning-yellow-700: #b45309;
+		--warning-yellow-800: #92400e;
+		--warning-yellow-900: #78350f;
+		--error-red-50: #fef2f2;
+		--error-red-100: #fee2e2;
+		--error-red-200: #fecaca;
+		--error-red-300: #fca5a5;
+		--error-red-400: #f87171;
+		--error-red-500: #ef4444;
+		--error-red-600: #dc2626;
+		--error-red-700: #b91c1c;
+		--error-red-800: #991b1b;
+		--error-red-900: #7f1d1d;
+		--shades-white: #ffffff;
+		--shades-black: #000000;
+		--secondary-50: #fefaed;
+		--secondary-100: #fdf0c8;
+		--secondary-200: #fbe7a3;
+		--secondary-300: #f9dd7e;
+		--secondary-500: #f7ce46;
+		--secondary-600: #c6a538;
+		--secondary-700: #947c2a;
+		--secondary-800: #63521c;
+		--secondary-900: #31290e;
+
+		--display----01-----semi--bold: 1rem;
+		--display----01-----bold: 1rem;
+		--display----01-----extra--bold: 1rem;
+		--display----02-----semi--bold: 0.83rem;
+		--display----02-----bold: 0.83rem;
+		--display--02---extra--bold: 0.83rem;
+		--heading---h1---semi--bold: 0.67rem;
+		--heading---h1---bold: 0.67rem;
+		--heading---h1---extra--bold: 0.67rem;
+		--heading---h1----small---semi--bold: 0.47rem;
+		--heading-----h1----small-----bold: 0.47rem;
+		--heading-----h1----small-----extra--bold: 0.47rem;
+		--heading-----h2-----semi--bold: 0.54rem;
+		--heading---h2-----bold: 0.54rem;
+		--heading-----h2-----extra--bold: 0.54rem;
+		--heading-----h2----small-----semi--bold: 0.46rem;
+		--heading-----h2----small-----bold: 0.46rem;
+		--heading-----h2----small-----extra--bold: 0.46rem;
+		--heading-----h3-----semi--bold: 0.46rem;
+		--heading-----h3-----bold: 0.46rem;
+		--heading-----h3-----extra--bold: 0.46rem;
+		--heading-----h3----small-----semi--bold: 0.39rem;
+		--heading-----h3----small-----bold: 0.39rem;
+		--heading-----h3----small-----extra--bold: 0.39rem;
+		--heading-----h4-----semi--bold: 0.39rem;
+		--heading---h4-----bold: 0.39rem;
+		--heading-----h4-----extra--bold: 0.39rem;
+		--heading-----h4----small-----semi--bold: 0.32rem;
+		--heading-----h4----small-----bold: 0.32rem;
+		--heading-----h4----small-----extra--bold: 0.32rem;
+		--heading-----h5-----semi--bold: 0.32rem;
+		--heading-----h5-----bold: 0.32rem;
+		--heading-----h5-----extra--bold: 0.32rem;
+		--heading-----h5----small-----semi--bold: 0.26rem;
+		--heading-----h5----small-----bold: 0.26rem;
+		--heading-----h5----small-----extra--bold: 0.26rem;
+		--heading---h6---semi--bold: 0.26rem;
+		--heading---h6---bold: 0.26rem;
+		--heading---h6---extra--bold: 0.26rem;
+		--heading---h6----small---semi--bold: 0.19rem;
+		--heading---h6----small---bold: 0.19rem;
+		--heading---h6----small---extra--bold: 0.19rem;
+		--subheading---regular: 0.28rem;
+		--subheading---underline: 0.28rem;
+		--subheading-----semi--bold: 0.28rem;
+		--paragraph---p1-----regular: 0.19rem;
+		--paragraph---p1---semi--bold: 0.19rem;
+		--paragraph-----p1-----underline: 0.19rem;
+		--paragraph-----p2-----regular: 0.22rem;
+		--paragraph---p2---semi--bold: 0.22rem;
+		--paragraph-----p2-----underline: 0.22rem;
+		--paragraph---p3---regular: 0.25rem;
+		--paragraph---p3---semi--bold: 0.25rem;
+		--paragraph-----p3-----underline: 0.25rem;
+		--caption-----regular: 0.17rem;
+		--caption-----semi--bold: 0.17rem;
+		--caption-----c-a-p: 0.17rem;
+		--footer-----regular: 0.14rem;
+		--footer-----semi--bold: 0.14rem;
+		--footer-----c-a-p: 0.14rem;
+
+		--shadow--x-l: 0px 20px 56px rgba(0, 0, 0, 0.29);
+		--shadow--l-g: 0px 13px 37px rgba(0, 0, 0, 0.21);
+		--shadow--m-d: 0px 9px 18px rgba(0, 0, 0, 0.15);
+		--shadow--s-m: 0px 6px 12px rgba(0, 0, 0, 0.11);
+		--shadow--x-s: 0px 4px 8px rgba(0, 0, 0, 0.08);
+		--shadow--border--bottom: 0px 1px 0px rgba(226, 232, 240, 1);
 	}
-	.theme-swiss {
-		--color-text-base: 255, 255, 255;
-		--color-text-muted: 254, 202, 202;
-		--color-text-inverted: 220, 38, 38;
-		--color-fill: 185, 28, 28;
-		--color-button-accent: 255, 255, 255;
-		--color-button-accent-hover: 254, 242, 242;
-		--color-button-muted: 239, 68, 68;
+	.theme-dark {
+		--dark--mode---dark--mode-900: #131825;
+		--dark--mode---dark--mode-800: #1c212e;
+		--dark--mode---dark--mode-700: #262a36;
+		--dark--mode---dark--mode-600: #2f343f;
+		--dark--mode---dark--mode-500: #393d48;
+		--dark--mode---dark--mode-400: #424651;
+		--dark--mode---dark--mode-300: #424651;
+		--dark--mode---dark--mode-200: #4c4f59;
+		--dark--mode---dark--mode-100: #555962;
+		--dark--mode---dark--mode-50: #5f626b;
+
+		--dark--mode---shadow--x-s: 0px 4px 8px rgba(0, 0, 0, 0.2);
+		--dark--mode---shadow--s-m: 0px 6px 12px rgba(0, 0, 0, 0.2);
+		--dark--mode---shadow--m-d: 0px 9px 18px rgba(0, 0, 0, 0.2);
+		--dark--mode---shadow--l-g: 0px 13px 37px rgba(0, 0, 0, 0.2);
+		--dark--mode---shadow--x-l: 0px 20px 56px rgba(0, 0, 0, 0.2);
+		--dark--mode---shadow--border--bottom: 0px 4px 4px
+			rgba(255, 255, 255, 0.25);
 	}
-	.theme-neon {
+	/* .theme-neon {
 		--color-text-base: 17, 24, 2;
 		--color-text-muted: 47, 67, 6;
 		--color-text-inverted: 235, 250, 204;
@@ -63,23 +199,9 @@ body::-webkit-scrollbar {
 		--color-button-accent: 36, 52, 3;
 		--color-button-accent-hover: 55, 79, 5;
 		--color-button-muted: 212, 255, 122;
-	}
+	} */
 }
 
-@layer base {
-	@font-face {
-		font-family: 'Helvetica Neue-Medium';
-		font-style: normal;
-		font-weight: 500;
-		src: url('../fonts/HelveticaNeueMedium.ttf') format('truetype');
-	}
-	@font-face {
-		font-family: 'Helvetica Neue-Regular';
-		font-style: normal;
-		font-weight: 400;
-		src: url('../fonts/hlb.ttf') format('truetype');
-	}
-}
 @layer base {
 	[type='text'],
 	[type='email'],
@@ -143,6 +265,6 @@ body::-webkit-scrollbar {
 	.features-text {
 		text-transform: uppercase;
 		-webkit-text-stroke: 1px #eaeaea;
-		color: 'white';
+		color: 'green';
 	}
 }

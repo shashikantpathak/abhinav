@@ -1,55 +1,105 @@
 <template>
 	<div class="flex flex-col relative pt-20">
-		<figure>
-			<img
-				src="@/assets/img/vectors/Testimonials.png"
-				alt=""
-				class="float-right"
-			/>
-		</figure>
-
-		<carousel
-			:transition="500"
-			:items-to-show="1"
-			:items-to-scroll="1"
-			:wrap-around="true"
+		<p
+			class="text-9xl font-black tracking-widest uppercase text-end features-text"
+			style="font-size: 8.3rem"
 		>
-			<slide v-for="(slide, key, index) in imgItems" :key="index">
-				<div class="carousel_review">
-					<div class="image_review">
-						<img
-							src="@/assets/img/testinomials/lin.jpg"
-							alt=""
-							class="testinomialimg"
-						/>
-
-						<div class="a"></div>
-						<div class="b"></div>
-						<div class="d">{{ key + 1 }}/{{ imgItems.length }}</div>
-					</div>
-					<div class="testinomial_text">
-						<div class="text">
-							{{ slide.text }}
+			Testinomials
+		</p>
+		<div class="">
+			<carousel
+				:transition="500"
+				:items-to-show="1"
+				:items-to-scroll="1"
+				:wrap-around="true"
+			>
+				<slide v-for="(slide, key, index) in imgItems" :key="index">
+					<div class="carousel_review">
+						<div
+							class="inline-flex space-x-28 items-center justify-start w-4/5 gap-x-12"
+						>
+							<div class="image_review" data-v-dc63638e="">
+								<div data-v-dc63638e="">
+									<div
+										class="skewed absolute"
+										data-v-dc63638e=""
+										style="
+											top: -3rem;
+											right: 1rem;
+											z-index: 1;
+											width: 11rem;
+											height: 8rem;
+										"
+									>
+										<img
+											src="/src/assets/img/testinomials/lin.jpg"
+											alt=""
+											data-v-dc63638e=""
+											style="
+												width: 100%;
+												height: 100%;
+												object-fit: cover;
+												border-radius: 12px;
+											"
+										/>
+									</div>
+									<div class="a" data-v-dc63638e=""></div>
+								</div>
+								<div class="b" data-v-dc63638e=""></div>
+								<div class="d" data-v-dc63638e="">1/3</div>
+							</div>
+							<div
+								class="inline-flex flex-col space-y-6 items-start justify-start w-96"
+							>
+								<p
+									class="w-full text-base leading-normal text-gray-500 text-justify"
+								>
+									Djuli dashboard is lorem ipsum dolor sit
+									amet, consectetur adipiscing elit, sed do
+									eiusmod tempor incididunt ut labore et
+									dolore magna aliqua. Ut enim ad minim
+									veniam, quis nostrud exercitation, I
+									absolutely recommend it.
+								</p>
+								<div
+									class="flex flex-col space-y-1 items-start justify-start"
+								>
+									<p
+										class="text-sm font-medium text-gray-800 uppercase"
+									>
+										christian buehner
+									</p>
+									<p class="text-xs text-gray-400">
+										Data Scientist, AQube-Oslo
+									</p>
+								</div>
+							</div>
 						</div>
-						<div class="designation_work">
-							<div class="designation">{{ slide.name }}</div>
-							<div class="work">{{ slide.designation }}</div>
+						<div class="mb-20">
+							<div class="skewed" data-v-c7f94e5a="">
+								<img
+									src="/src/assets/img/testinomials/daniel.jpg"
+									class=""
+									alt=""
+									data-v-c7f94e5a=""
+									style="
+										width: 100%;
+										height: 100%;
+										object-fit: fit;
+										object-fit: cover;
+										border-radius: 12px;
+									"
+								/>
+							</div>
 						</div>
 					</div>
-					<div class="image_review_next">
-						<img
-							src="@/assets/img/map.png"
-							class="image_next"
-							alt=""
-						/>
-					</div>
-				</div>
-			</slide>
-			<template #addons>
-				<navigation />
-				<pagination />
-			</template>
-		</carousel>
+				</slide>
+				<template #addons>
+					<navigation />
+					<pagination />
+				</template>
+			</carousel>
+		</div>
 	</div>
 </template>
 
@@ -58,7 +108,6 @@ import 'vue3-carousel/dist/carousel.css';
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
 
 export default {
-	name: 'App',
 	components: {
 		Carousel,
 		Slide,
@@ -98,13 +147,22 @@ export default {
 </script>
 
 <style scoped>
+.skewed {
+	transform: rotate(0deg) skewY(20deg); /* Equal to skewX(10deg) */
+	background-color: gainsboro;
+	width: 11rem;
+	height: 8rem;
+	margin: auto;
+	border-radius: 12px;
+	margin-top: 5rem;
+}
 .carousel_review {
 	display: flex;
 	flex-direction: row;
 	width: 100%;
 	justify-content: space-around;
 	align-items: center;
-	padding: 0px 5rem;
+	padding: 0px 12rem;
 }
 .text {
 	width: 368px;
@@ -180,13 +238,11 @@ export default {
 }
 
 .a {
-	width: 215px;
-	height: 320px;
-
+	width: 186px;
+	height: 304px;
 	margin-top: 3rem;
-	border-radius: 40px;
 	background: #f6f5ef;
-	border-radius: 36px;
+	border-radius: 24px;
 	transform: matrix(-1, 0, 0, 1, 0, 0);
 	transform: rotate(90deg) skew(20deg);
 }
